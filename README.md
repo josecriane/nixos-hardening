@@ -55,6 +55,11 @@ A rule that no module implements defaults to `deferred`. A rule that a
 module implements defaults to `enforced`. A profile changes defaults for a
 class of machine. A host sets the final value.
 
+A catalog can declare groups of rules. `hardening.<catalog>.groups.<group>`
+takes a `status` and a `reason` and applies them to every rule of the group.
+The precedence, from lowest to highest, is: module default, profile, group,
+rule set by the host.
+
 The evaluation fails when an enforced rule has no implementation, or when a
 rule that is not enforced has no reason.
 

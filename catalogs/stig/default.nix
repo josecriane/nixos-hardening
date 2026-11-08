@@ -9,6 +9,7 @@ in
       catalog = lib.importJSON ./anduril-nixos.json;
       defaultProfile = "server";
       profiles = import ./profiles.nix;
+      groups = import ./groups.nix;
       areas = [
         ./ssh.nix
         ./network.nix

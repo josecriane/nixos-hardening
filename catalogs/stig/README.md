@@ -197,6 +197,18 @@ stay `deferred` in the report.
 applicable. `workstation` exempts sshd, Wi-Fi, Bluetooth and USBGuard, and
 lowers the auditd disk actions from `HALT` to `SYSLOG`.
 
+## Groups
+
+`hardening.stig.groups.<group>` sets the status and the reason of several
+rules at once. A rule that the host sets explicitly keeps its own value.
+
+| Group           | Rules |
+|-----------------|-------|
+| `audit`         | auditd, kernel audit parameters, audit rules, auditd.conf, journald audit capture: V-268080, V-268091 to V-268107, V-268110, V-268119, V-268120, V-268148, V-268163 to V-268167 |
+| `ssh`           | sshd: V-268083, V-268088, V-268089, V-268137, V-268142, V-268143, V-268157, V-268159, V-268176 |
+| `pki`           | smart cards and sssd: V-268124, V-268136, V-268177, V-268178, V-268179 |
+| `remoteLogging` | journal upload: V-268108, V-268109 |
+
 ## Organization-specific values
 
 The defaults are generic, not those of the US Department of War. V-268082,

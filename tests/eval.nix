@@ -47,6 +47,21 @@ let
   evaluates = extra: (builtins.tryEval (configFor extra).system.build.toplevel.drvPath).success;
 
   server = configFor { hardening.stig.enable = true; };
+
+  grouped = configFor {
+    hardening.stig = {
+      enable = true;
+      profile = "workstation";
+      groups.ssh = {
+        status = "notApplicable";
+        reason = "Checked by the evaluation test.";
+      };
+      rules.V-268137 = {
+        status = "exception";
+        reason = "Checked by the evaluation test.";
+      };
+    };
+  };
   report = server.hardening.report.stig;
   ruleCount = lib.length (lib.attrNames report.rules);
   summaryTotal = lib.foldl' lib.add 0 (lib.attrValues report.summary);
@@ -70,6 +85,15 @@ assert
     hardening.stig.rules.V-268125.status = "enforced";
   };
 assert evaluates { hardening.stig.rules.V-268137.status = "exception"; };
+assert grouped.hardening.stig.rules.V-268142.status == "notApplicable";
+assert grouped.hardening.stig.rules.V-268159.status == "notApplicable";
+assert grouped.hardening.stig.rules.V-268137.status == "exception";
+assert
+  !evaluates {
+    hardening.stig.enable = true;
+    hardening.stig.groups.ssh.status = "exception";
+  };
+assert lib.elem "V-268080" report.groups.audit;
 assert ruleCount == 103;
 assert summaryTotal == ruleCount;
 assert report.summary.enforced > 0;
