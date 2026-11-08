@@ -1,0 +1,1029 @@
+{
+  "meta": {
+    "title": "Anduril NixOS Security Technical Implementation Guide",
+    "version": "1",
+    "release": "Release: 3 Benchmark Date: 30 Sep 2026",
+    "source": "https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/U_Anduril_NixOS_V1R3_STIG.zip"
+  },
+  "rules": {
+    "V-268078": {
+      "severity": "medium",
+      "version": "ANIX-00-000010",
+      "rule": "SV-268078r1130947_rule",
+      "title": "NixOS must enable the built-in firewall.",
+      "cci": [
+        "CCI-002322",
+        "CCI-000382",
+        "CCI-002314",
+        "CCI-000366"
+      ]
+    },
+    "V-268079": {
+      "severity": "medium",
+      "version": "ANIX-00-000020",
+      "rule": "SV-268079r1268212_rule",
+      "title": "NixOS emergency or temporary user accounts must be provisioned with an expiration time of 72 hours or less.",
+      "cci": [
+        "CCI-000016",
+        "CCI-001682"
+      ]
+    },
+    "V-268080": {
+      "severity": "medium",
+      "version": "ANIX-00-000030",
+      "rule": "SV-268080r1130951_rule",
+      "title": "NixOS must enable the audit daemon.",
+      "cci": [
+        "CCI-000018",
+        "CCI-001464",
+        "CCI-001858",
+        "CCI-001875",
+        "CCI-001877",
+        "CCI-001878",
+        "CCI-001879",
+        "CCI-001880",
+        "CCI-001881",
+        "CCI-001882",
+        "CCI-001876",
+        "CCI-001889"
+      ]
+    },
+    "V-268081": {
+      "severity": "medium",
+      "version": "ANIX-00-000040",
+      "rule": "SV-268081r1130954_rule",
+      "title": "NixOS must enforce the limit of three consecutive invalid logon attempts by a user during a 15-minute time period.",
+      "cci": [
+        "CCI-000044",
+        "CCI-002238",
+        "CCI-000172"
+      ]
+    },
+    "V-268082": {
+      "severity": "medium",
+      "version": "ANIX-00-000050",
+      "rule": "SV-268082r1268215_rule",
+      "title": "NixOS must be configured to display the Standard Mandatory DoW Notice and Consent Banner before granting local or remote access to the system via a command line user logon.",
+      "cci": [
+        "CCI-000048"
+      ]
+    },
+    "V-268083": {
+      "severity": "medium",
+      "version": "ANIX-00-000060",
+      "rule": "SV-268083r1268215_rule",
+      "title": "NixOS must be configured to display the Standard Mandatory DoW Notice and Consent Banner before granting local or remote access to the system via an SSH logon.",
+      "cci": [
+        "CCI-000048"
+      ]
+    },
+    "V-268084": {
+      "severity": "medium",
+      "version": "ANIX-00-000070",
+      "rule": "SV-268084r1268215_rule",
+      "title": "NixOS must be configured to display the Standard Mandatory DoW Notice and Consent Banner before granting local or remote access to the system via a graphical user logon.",
+      "cci": [
+        "CCI-000048",
+        "CCI-001384",
+        "CCI-001385",
+        "CCI-001386",
+        "CCI-001387",
+        "CCI-001388"
+      ]
+    },
+    "V-268085": {
+      "severity": "low",
+      "version": "ANIX-00-000090",
+      "rule": "SV-268085r1130966_rule",
+      "title": "NixOS must be configured to limit the number of concurrent sessions to 10 for all accounts and/or account types.",
+      "cci": [
+        "CCI-000054"
+      ]
+    },
+    "V-268086": {
+      "severity": "medium",
+      "version": "ANIX-00-000110",
+      "rule": "SV-268086r1130969_rule",
+      "title": "NixOS must initiate a session lock after a 10-minute period of inactivity for graphical user logon.",
+      "cci": [
+        "CCI-000057"
+      ]
+    },
+    "V-268087": {
+      "severity": "medium",
+      "version": "ANIX-00-000120",
+      "rule": "SV-268087r1130972_rule",
+      "title": "NixOS must provide the capability for users to directly initiate a session lock for all connection types.",
+      "cci": [
+        "CCI-000057",
+        "CCI-000056",
+        "CCI-000060"
+      ]
+    },
+    "V-268088": {
+      "severity": "medium",
+      "version": "ANIX-00-000140",
+      "rule": "SV-268088r1268219_rule",
+      "title": "NixOS must monitor remote access methods.",
+      "cci": [
+        "CCI-000067"
+      ]
+    },
+    "V-268089": {
+      "severity": "high",
+      "version": "ANIX-00-000150",
+      "rule": "SV-268089r1268222_rule",
+      "title": "NixOS must implement DoW-approved encryption to protect the confidentiality of remote access sessions.",
+      "cci": [
+        "CCI-000068",
+        "CCI-001453",
+        "CCI-003123"
+      ]
+    },
+    "V-268090": {
+      "severity": "medium",
+      "version": "ANIX-00-000160",
+      "rule": "SV-268090r1130981_rule",
+      "title": "The NixOS audit package must be installed.",
+      "cci": [
+        "CCI-000130",
+        "CCI-000131",
+        "CCI-000132",
+        "CCI-000133",
+        "CCI-000134",
+        "CCI-000135",
+        "CCI-000158",
+        "CCI-000159",
+        "CCI-000163",
+        "CCI-000164",
+        "CCI-001403",
+        "CCI-001404",
+        "CCI-001405",
+        "CCI-001487",
+        "CCI-002130",
+        "CCI-002234"
+      ]
+    },
+    "V-268091": {
+      "severity": "medium",
+      "version": "ANIX-00-000210",
+      "rule": "SV-268091r1130983_rule",
+      "title": "NixOS must generate audit records for all usage of privileged commands.",
+      "cci": [
+        "CCI-000135",
+        "CCI-000169",
+        "CCI-000172",
+        "CCI-003938",
+        "CCI-002884",
+        "CCI-004188"
+      ]
+    },
+    "V-268092": {
+      "severity": "medium",
+      "version": "ANIX-00-000250",
+      "rule": "SV-268092r1267998_rule",
+      "title": "NixOS must enable auditing of processes that start prior to the audit daemon.",
+      "cci": [
+        "CCI-000135"
+      ]
+    },
+    "V-268093": {
+      "severity": "medium",
+      "version": "ANIX-00-000260",
+      "rule": "SV-268093r1130988_rule",
+      "title": "NixOS must allocate an audit_backlog_limit of sufficient size to capture processes that start prior to the audit daemon.",
+      "cci": [
+        "CCI-000135",
+        "CCI-001849"
+      ]
+    },
+    "V-268094": {
+      "severity": "medium",
+      "version": "ANIX-00-000270",
+      "rule": "SV-268094r1130990_rule",
+      "title": "Successful/unsuccessful uses of the mount syscall in NixOS must generate an audit record.",
+      "cci": [
+        "CCI-000135"
+      ]
+    },
+    "V-268095": {
+      "severity": "medium",
+      "version": "ANIX-00-000280",
+      "rule": "SV-268095r1130992_rule",
+      "title": "Successful/unsuccessful uses of the rename, unlink, rmdir, renameat, and unlinkat system calls in NixOS must generate an audit record.",
+      "cci": [
+        "CCI-000135"
+      ]
+    },
+    "V-268096": {
+      "severity": "medium",
+      "version": "ANIX-00-000290",
+      "rule": "SV-268096r1130994_rule",
+      "title": "Successful/unsuccessful uses of the init_module, finit_module, and delete_module system calls in NixOS must generate an audit record.",
+      "cci": [
+        "CCI-000135",
+        "CCI-000172"
+      ]
+    },
+    "V-268097": {
+      "severity": "medium",
+      "version": "ANIX-00-000300",
+      "rule": "SV-268097r1130996_rule",
+      "title": "NixOS must generate an audit record for successful/unsuccessful modifications to the cron configuration.",
+      "cci": [
+        "CCI-000135"
+      ]
+    },
+    "V-268098": {
+      "severity": "medium",
+      "version": "ANIX-00-000310",
+      "rule": "SV-268098r1130998_rule",
+      "title": "NixOS must generate an audit record for successful/unsuccessful uses of the truncate, ftruncate, creat, open, openat, and open_by_handle_at system calls.",
+      "cci": [
+        "CCI-000135",
+        "CCI-000172"
+      ]
+    },
+    "V-268099": {
+      "severity": "medium",
+      "version": "ANIX-00-000360",
+      "rule": "SV-268099r1131000_rule",
+      "title": "Successful/unsuccessful uses of the chown, fchown, fchownat, and lchown system calls in NixOS must generate an audit record.",
+      "cci": [
+        "CCI-000135"
+      ]
+    },
+    "V-268100": {
+      "severity": "medium",
+      "version": "ANIX-00-000380",
+      "rule": "SV-268100r1131002_rule",
+      "title": "Successful/unsuccessful uses of the chmod, fchmod, and fchmodat system calls in NixOS must generate an audit record.",
+      "cci": [
+        "CCI-000135",
+        "CCI-000172"
+      ]
+    },
+    "V-268101": {
+      "severity": "medium",
+      "version": "ANIX-00-000400",
+      "rule": "SV-268101r1131004_rule",
+      "title": "NixOS must notify the system administrator (SA) and information system security officer (ISSO) (at a minimum) when allocated audit record storage volume reaches 75 percent utilization.",
+      "cci": [
+        "CCI-000139",
+        "CCI-001855"
+      ]
+    },
+    "V-268102": {
+      "severity": "medium",
+      "version": "ANIX-00-000410",
+      "rule": "SV-268102r1131006_rule",
+      "title": "NixOS must notify the system administrator (SA) and information system security officer (ISSO) (at a minimum) when allocated audit record storage volume reaches 90 percent utilization.",
+      "cci": [
+        "CCI-000139"
+      ]
+    },
+    "V-268103": {
+      "severity": "medium",
+      "version": "ANIX-00-000420",
+      "rule": "SV-268103r1131008_rule",
+      "title": "NixOS must take action when allocated audit record storage volume reaches 75 percent of the repository maximum audit record storage capacity.",
+      "cci": [
+        "CCI-000139"
+      ]
+    },
+    "V-268104": {
+      "severity": "medium",
+      "version": "ANIX-00-000430",
+      "rule": "SV-268104r1131010_rule",
+      "title": "NixOS must take action when allocated audit record storage volume reaches 90 percent of the repository maximum audit record storage capacity.",
+      "cci": [
+        "CCI-000139"
+      ]
+    },
+    "V-268105": {
+      "severity": "medium",
+      "version": "ANIX-00-000440",
+      "rule": "SV-268105r1131012_rule",
+      "title": "The NixOS audit system must take appropriate action when the audit storage volume is full.",
+      "cci": [
+        "CCI-000140"
+      ]
+    },
+    "V-268106": {
+      "severity": "medium",
+      "version": "ANIX-00-000450",
+      "rule": "SV-268106r1131014_rule",
+      "title": "The NixOS audit system must take appropriate action when an audit processing failure occurs.",
+      "cci": [
+        "CCI-000140"
+      ]
+    },
+    "V-268107": {
+      "severity": "medium",
+      "version": "ANIX-00-000460",
+      "rule": "SV-268107r1131017_rule",
+      "title": "NixOS must have the packages required for offloading audit logs installed and running.",
+      "cci": [
+        "CCI-000154",
+        "CCI-001665"
+      ]
+    },
+    "V-268108": {
+      "severity": "medium",
+      "version": "ANIX-00-000480",
+      "rule": "SV-268108r1131020_rule",
+      "title": "The NixOS audit records must be off-loaded onto a different system or storage media from the system being audited.",
+      "cci": [
+        "CCI-000154"
+      ]
+    },
+    "V-268109": {
+      "severity": "medium",
+      "version": "ANIX-00-000490",
+      "rule": "SV-268109r1131023_rule",
+      "title": "NixOS must authenticate the remote logging server for off-loading audit logs.",
+      "cci": [
+        "CCI-000154",
+        "CCI-001851"
+      ]
+    },
+    "V-268110": {
+      "severity": "medium",
+      "version": "ANIX-00-000520",
+      "rule": "SV-268110r1131025_rule",
+      "title": "NixOS audit daemon must generate logs that are group-owned by root.",
+      "cci": [
+        "CCI-000162",
+        "CCI-001314"
+      ]
+    },
+    "V-268111": {
+      "severity": "medium",
+      "version": "ANIX-00-000530",
+      "rule": "SV-268111r1039221_rule",
+      "title": "NixOS audit directory and logs must be owned by root to prevent unauthorized read access.",
+      "cci": [
+        "CCI-000162",
+        "CCI-001314"
+      ]
+    },
+    "V-268112": {
+      "severity": "medium",
+      "version": "ANIX-00-000540",
+      "rule": "SV-268112r1039224_rule",
+      "title": "NixOS audit directory and logs must be group-owned by root to prevent unauthorized read access.",
+      "cci": [
+        "CCI-000162",
+        "CCI-001314"
+      ]
+    },
+    "V-268113": {
+      "severity": "medium",
+      "version": "ANIX-00-000550",
+      "rule": "SV-268113r1039227_rule",
+      "title": "NixOS audit log directory must have a mode of 0700 or less permissive.",
+      "cci": [
+        "CCI-000162"
+      ]
+    },
+    "V-268114": {
+      "severity": "medium",
+      "version": "ANIX-00-000560",
+      "rule": "SV-268114r1039230_rule",
+      "title": "NixOS audit logs must have a mode of 0600 or less permissive.",
+      "cci": [
+        "CCI-000162",
+        "CCI-001314"
+      ]
+    },
+    "V-268115": {
+      "severity": "medium",
+      "version": "ANIX-00-000570",
+      "rule": "SV-268115r1131028_rule",
+      "title": "NixOS journald directory and logs must be owned by root to prevent unauthorized read access.",
+      "cci": [
+        "CCI-000162",
+        "CCI-001314"
+      ]
+    },
+    "V-268116": {
+      "severity": "medium",
+      "version": "ANIX-00-000580",
+      "rule": "SV-268116r1131031_rule",
+      "title": "NixOS journald directory and logs must be group-owned by systemd-journald to prevent unauthorized read access.",
+      "cci": [
+        "CCI-000162",
+        "CCI-001314"
+      ]
+    },
+    "V-268117": {
+      "severity": "medium",
+      "version": "ANIX-00-000590",
+      "rule": "SV-268117r1131034_rule",
+      "title": "NixOS systemd-journald directory must have a mode of 2755 or less permissive.",
+      "cci": [
+        "CCI-000162"
+      ]
+    },
+    "V-268118": {
+      "severity": "medium",
+      "version": "ANIX-00-000600",
+      "rule": "SV-268118r1131037_rule",
+      "title": "NixOS systemd-journald logs must have a mode of 0640 or less permissive.",
+      "cci": [
+        "CCI-000162",
+        "CCI-001312"
+      ]
+    },
+    "V-268119": {
+      "severity": "medium",
+      "version": "ANIX-00-000610",
+      "rule": "SV-268119r1131040_rule",
+      "title": "NixOS audit system must protect logon UIDs from unauthorized change.",
+      "cci": [
+        "CCI-000163",
+        "CCI-000164"
+      ]
+    },
+    "V-268120": {
+      "severity": "medium",
+      "version": "ANIX-00-000660",
+      "rule": "SV-268120r1131043_rule",
+      "title": "NixOS audit configuration files must have a mode of 444 or less permissive.",
+      "cci": [
+        "CCI-000171"
+      ]
+    },
+    "V-268121": {
+      "severity": "medium",
+      "version": "ANIX-00-000670",
+      "rule": "SV-268121r1131046_rule",
+      "title": "NixOS system configuration file directories must have a mode of \"0755\" or less permissive.",
+      "cci": [
+        "CCI-000171"
+      ]
+    },
+    "V-268122": {
+      "severity": "medium",
+      "version": "ANIX-00-000680",
+      "rule": "SV-268122r1131049_rule",
+      "title": "NixOS system configuration files and directories must be owned by root.",
+      "cci": [
+        "CCI-000171"
+      ]
+    },
+    "V-268123": {
+      "severity": "medium",
+      "version": "ANIX-00-000690",
+      "rule": "SV-268123r1131052_rule",
+      "title": "NixOS system configuration files and directories must be group-owned by root.",
+      "cci": [
+        "CCI-000171"
+      ]
+    },
+    "V-268124": {
+      "severity": "medium",
+      "version": "ANIX-00-000710",
+      "rule": "SV-268124r1268001_rule",
+      "title": "NixOS, for PKI-based authentication, must validate certificates by constructing a certification path (which includes status information) to an accepted trust anchor.",
+      "cci": [
+        "CCI-000185",
+        "CCI-002470",
+        "CCI-004909"
+      ]
+    },
+    "V-268125": {
+      "severity": "medium",
+      "version": "ANIX-00-000720",
+      "rule": "SV-268125r1039263_rule",
+      "title": "NixOS must enforce authorized access to the corresponding private key for PKI-based authentication.",
+      "cci": [
+        "CCI-000186"
+      ]
+    },
+    "V-268126": {
+      "severity": "medium",
+      "version": "ANIX-00-000730",
+      "rule": "SV-268126r1131057_rule",
+      "title": "NixOS must enforce password complexity by requiring that at least one uppercase character be used.",
+      "cci": [
+        "CCI-004066"
+      ]
+    },
+    "V-268127": {
+      "severity": "medium",
+      "version": "ANIX-00-000740",
+      "rule": "SV-268127r1131059_rule",
+      "title": "NixOS must enforce password complexity by requiring that at least one lowercase character be used.",
+      "cci": [
+        "CCI-004066"
+      ]
+    },
+    "V-268128": {
+      "severity": "medium",
+      "version": "ANIX-00-000750",
+      "rule": "SV-268128r1131061_rule",
+      "title": "NixOS must enforce password complexity by requiring that at least one numeric character be used.",
+      "cci": [
+        "CCI-004066"
+      ]
+    },
+    "V-268129": {
+      "severity": "medium",
+      "version": "ANIX-00-000760",
+      "rule": "SV-268129r1131063_rule",
+      "title": "NixOS must require the change of at least 50 percent of the total number of characters when passwords are changed.",
+      "cci": [
+        "CCI-004066"
+      ]
+    },
+    "V-268130": {
+      "severity": "high",
+      "version": "ANIX-00-000770",
+      "rule": "SV-268130r1131065_rule",
+      "title": "NixOS must store only encrypted representations of passwords.",
+      "cci": [
+        "CCI-004062"
+      ]
+    },
+    "V-268131": {
+      "severity": "high",
+      "version": "ANIX-00-000780",
+      "rule": "SV-268131r1131067_rule",
+      "title": "NixOS must not have the telnet package installed.",
+      "cci": [
+        "CCI-000197"
+      ]
+    },
+    "V-268132": {
+      "severity": "medium",
+      "version": "ANIX-00-000790",
+      "rule": "SV-268132r1131069_rule",
+      "title": "NixOS must enforce 24 hours/one day as the minimum password lifetime.",
+      "cci": [
+        "CCI-004066"
+      ]
+    },
+    "V-268133": {
+      "severity": "medium",
+      "version": "ANIX-00-000800",
+      "rule": "SV-268133r1268211_rule",
+      "title": "NixOS must enforce a 180-day maximum password lifetime restriction.",
+      "cci": [
+        "CCI-004066"
+      ]
+    },
+    "V-268134": {
+      "severity": "medium",
+      "version": "ANIX-00-000810",
+      "rule": "SV-268134r1131073_rule",
+      "title": "NixOS must enforce a minimum 15-character password length.",
+      "cci": [
+        "CCI-004066"
+      ]
+    },
+    "V-268135": {
+      "severity": "medium",
+      "version": "ANIX-00-000840",
+      "rule": "SV-268135r1039293_rule",
+      "title": "NixOS must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users).",
+      "cci": [
+        "CCI-000764",
+        "CCI-000804"
+      ]
+    },
+    "V-268136": {
+      "severity": "medium",
+      "version": "ANIX-00-000850",
+      "rule": "SV-268136r1268228_rule",
+      "title": "NixOS must use multifactor authentication for network access to privileged accounts.",
+      "cci": [
+        "CCI-000765",
+        "CCI-000766"
+      ]
+    },
+    "V-268137": {
+      "severity": "medium",
+      "version": "ANIX-00-000890",
+      "rule": "SV-268137r1131078_rule",
+      "title": "NixOS must not allow direct login to the root account via SSH.",
+      "cci": [
+        "CCI-004045"
+      ]
+    },
+    "V-268138": {
+      "severity": "medium",
+      "version": "ANIX-00-000900",
+      "rule": "SV-268138r1131081_rule",
+      "title": "NixOS must not allow direct login to the root account.",
+      "cci": [
+        "CCI-004045"
+      ]
+    },
+    "V-268139": {
+      "severity": "medium",
+      "version": "ANIX-00-000930",
+      "rule": "SV-268139r1131083_rule",
+      "title": "NixOS must enable USBguard.",
+      "cci": [
+        "CCI-000778",
+        "CCI-001958",
+        "CCI-003959"
+      ]
+    },
+    "V-268140": {
+      "severity": "medium",
+      "version": "ANIX-00-000970",
+      "rule": "SV-268140r1268233_rule",
+      "title": "A sticky bit must be set on all NixOS public directories to prevent unauthorized and unintended information transferred via shared system resources.",
+      "cci": [
+        "CCI-001090"
+      ]
+    },
+    "V-268141": {
+      "severity": "medium",
+      "version": "ANIX-00-000980",
+      "rule": "SV-268141r1131085_rule",
+      "title": "NixOS must manage excess capacity, bandwidth, or other redundancy to limit the effects of information flooding types of denial-of-service (DoS) attacks.",
+      "cci": [
+        "CCI-001095"
+      ]
+    },
+    "V-268142": {
+      "severity": "medium",
+      "version": "ANIX-00-000990",
+      "rule": "SV-268142r1131087_rule",
+      "title": "NixOS must terminate all SSH connections after 10 minutes of becoming unresponsive.",
+      "cci": [
+        "CCI-001133",
+        "CCI-002361",
+        "CCI-002891"
+      ]
+    },
+    "V-268143": {
+      "severity": "medium",
+      "version": "ANIX-00-001000",
+      "rule": "SV-268143r1131089_rule",
+      "title": "NixOS must terminate all SSH connections after becoming unresponsive.",
+      "cci": [
+        "CCI-001133"
+      ]
+    },
+    "V-268144": {
+      "severity": "high",
+      "version": "ANIX-00-001010",
+      "rule": "SV-268144r1039320_rule",
+      "title": "NixOS must protect the confidentiality and integrity of all information at rest.",
+      "cci": [
+        "CCI-001199",
+        "CCI-002475",
+        "CCI-002476",
+        "CCI-004910"
+      ]
+    },
+    "V-268145": {
+      "severity": "medium",
+      "version": "ANIX-00-001160",
+      "rule": "SV-268145r1131091_rule",
+      "title": "NixOS must enforce password complexity by requiring that at least one special character be used.",
+      "cci": [
+        "CCI-004066"
+      ]
+    },
+    "V-268146": {
+      "severity": "high",
+      "version": "ANIX-00-001250",
+      "rule": "SV-268146r1131093_rule",
+      "title": "NixOS must protect wireless access to and from the system using encryption.",
+      "cci": [
+        "CCI-001444",
+        "CCI-002418"
+      ]
+    },
+    "V-268147": {
+      "severity": "medium",
+      "version": "ANIX-00-001260",
+      "rule": "SV-268147r1131095_rule",
+      "title": "NixOS must protect wireless access to the system using authentication of users and/or devices.",
+      "cci": [
+        "CCI-001443"
+      ]
+    },
+    "V-268148": {
+      "severity": "medium",
+      "version": "ANIX-00-001280",
+      "rule": "SV-268148r1131097_rule",
+      "title": "NixOS must prevent all software from executing at higher privilege levels than users executing the software.",
+      "cci": [
+        "CCI-002233"
+      ]
+    },
+    "V-268149": {
+      "severity": "medium",
+      "version": "ANIX-00-001420",
+      "rule": "SV-268149r1268007_rule",
+      "title": "NixOS must, for networked systems, compare internal information system clocks at least every 24 hours with a server which is synchronized to one of the redundant United States Naval Observatory (USNO) time servers, or a time server designated for the appropriate DoW network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).",
+      "cci": [
+        "CCI-004923",
+        "CCI-001890",
+        "CCI-004922"
+      ]
+    },
+    "V-268150": {
+      "severity": "medium",
+      "version": "ANIX-00-001430",
+      "rule": "SV-268150r1131101_rule",
+      "title": "NixOS must synchronize internal information system clocks to the authoritative time source when the time difference is greater than one second.",
+      "cci": [
+        "CCI-004926"
+      ]
+    },
+    "V-268151": {
+      "severity": "medium",
+      "version": "ANIX-00-001440",
+      "rule": "SV-268151r1131103_rule",
+      "title": "NixOS must have time synchronization enabled.",
+      "cci": [
+        "CCI-004926"
+      ]
+    },
+    "V-268152": {
+      "severity": "medium",
+      "version": "ANIX-00-001450",
+      "rule": "SV-268152r1131105_rule",
+      "title": "NixOS must prohibit user installation of system software without explicit privileged status.",
+      "cci": [
+        "CCI-003980"
+      ]
+    },
+    "V-268153": {
+      "severity": "medium",
+      "version": "ANIX-00-001460",
+      "rule": "SV-268153r1131108_rule",
+      "title": "NixOS must notify designated personnel if baseline configurations are changed in an unauthorized manner.",
+      "cci": [
+        "CCI-001744",
+        "CCI-002696",
+        "CCI-002699",
+        "CCI-002702"
+      ]
+    },
+    "V-268154": {
+      "severity": "high",
+      "version": "ANIX-00-001480",
+      "rule": "SV-268154r1268241_rule",
+      "title": "NixOS must prevent the installation of patches, service packs, device drivers, or operating system components without verification they have been digitally signed using a certificate that is recognized and approved by the organization.",
+      "cci": [
+        "CCI-003992"
+      ]
+    },
+    "V-268155": {
+      "severity": "medium",
+      "version": "ANIX-00-001500",
+      "rule": "SV-268155r1268251_rule",
+      "title": "NixOS must require users to reauthenticate for privilege escalation.",
+      "cci": [
+        "CCI-000366"
+      ]
+    },
+    "V-268156": {
+      "severity": "medium",
+      "version": "ANIX-00-001510",
+      "rule": "SV-268156r1268251_rule",
+      "title": "NixOS must require users to reauthenticate when changing roles.",
+      "cci": [
+        "CCI-000366"
+      ]
+    },
+    "V-268157": {
+      "severity": "high",
+      "version": "ANIX-00-001550",
+      "rule": "SV-268157r1131119_rule",
+      "title": "NixOS must implement cryptographic mechanisms to protect the integrity of nonlocal maintenance and diagnostic communications, when used for nonlocal maintenance sessions.",
+      "cci": [
+        "CCI-002890"
+      ]
+    },
+    "V-268158": {
+      "severity": "medium",
+      "version": "ANIX-00-001610",
+      "rule": "SV-268158r1131121_rule",
+      "title": "NixOS must protect against or limit the effects of denial-of-service (DoS) attacks by ensuring the operating system is implementing rate-limiting measures on impacted network interfaces.",
+      "cci": [
+        "CCI-002385"
+      ]
+    },
+    "V-268159": {
+      "severity": "high",
+      "version": "ANIX-00-001620",
+      "rule": "SV-268159r1131124_rule",
+      "title": "NixOS must protect the confidentiality and integrity of transmitted information.",
+      "cci": [
+        "CCI-002418",
+        "CCI-001941",
+        "CCI-002421",
+        "CCI-002420",
+        "CCI-002422"
+      ]
+    },
+    "V-268160": {
+      "severity": "medium",
+      "version": "ANIX-00-001660",
+      "rule": "SV-268160r1131126_rule",
+      "title": "NixOS must implement nonexecutable data to protect its memory from unauthorized code execution.",
+      "cci": [
+        "CCI-002824",
+        "CCI-001082"
+      ]
+    },
+    "V-268161": {
+      "severity": "medium",
+      "version": "ANIX-00-001670",
+      "rule": "SV-268161r1131128_rule",
+      "title": "NixOS must implement address space layout randomization to protect its memory from unauthorized code execution.",
+      "cci": [
+        "CCI-002824"
+      ]
+    },
+    "V-268163": {
+      "severity": "medium",
+      "version": "ANIX-00-001720",
+      "rule": "SV-268163r1131131_rule",
+      "title": "NixOS must generate audit records when successful/unsuccessful attempts to modify security objects occur.",
+      "cci": [
+        "CCI-000172",
+        "CCI-000135"
+      ]
+    },
+    "V-268164": {
+      "severity": "medium",
+      "version": "ANIX-00-001730",
+      "rule": "SV-268164r1131133_rule",
+      "title": "NixOS must generate audit records when successful/unsuccessful attempts to delete privileges occur.",
+      "cci": [
+        "CCI-000172"
+      ]
+    },
+    "V-268165": {
+      "severity": "medium",
+      "version": "ANIX-00-001740",
+      "rule": "SV-268165r1131135_rule",
+      "title": "NixOS must generate audit records when successful/unsuccessful attempts to delete security objects occur.",
+      "cci": [
+        "CCI-000172"
+      ]
+    },
+    "V-268166": {
+      "severity": "medium",
+      "version": "ANIX-00-001790",
+      "rule": "SV-268166r1131137_rule",
+      "title": "NixOS must generate audit records when concurrent logons to the same account occur from different sources.",
+      "cci": [
+        "CCI-000172",
+        "CCI-000135"
+      ]
+    },
+    "V-268167": {
+      "severity": "medium",
+      "version": "ANIX-00-001820",
+      "rule": "SV-268167r1131139_rule",
+      "title": "NixOS must generate audit records for all account creations, modifications, disabling, and termination events.",
+      "cci": [
+        "CCI-000172",
+        "CCI-000135",
+        "CCI-000015"
+      ]
+    },
+    "V-268168": {
+      "severity": "high",
+      "version": "ANIX-00-001840",
+      "rule": "SV-268168r1137699_rule",
+      "title": "NixOS must implement NIST FIPS-validated cryptography for the following: to provision digital signatures, to generate cryptographic hashes, and to protect unclassified information requiring confidentiality and cryptographic protection in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.",
+      "cci": [
+        "CCI-002450"
+      ]
+    },
+    "V-268169": {
+      "severity": "medium",
+      "version": "ANIX-00-001860",
+      "rule": "SV-268169r1131144_rule",
+      "title": "NixOS must prevent the use of dictionary words for passwords.",
+      "cci": [
+        "CCI-000366"
+      ]
+    },
+    "V-268170": {
+      "severity": "medium",
+      "version": "ANIX-00-001861",
+      "rule": "SV-268170r1268251_rule",
+      "title": "NixOS must enable the use of pwquality.",
+      "cci": [
+        "CCI-000366"
+      ]
+    },
+    "V-268171": {
+      "severity": "medium",
+      "version": "ANIX-00-001870",
+      "rule": "SV-268171r1134782_rule",
+      "title": "NixOS must enforce a delay of at least four seconds between logon prompts following a failed logon attempt.",
+      "cci": [
+        "CCI-000366"
+      ]
+    },
+    "V-268172": {
+      "severity": "high",
+      "version": "ANIX-00-001880",
+      "rule": "SV-268172r1131152_rule",
+      "title": "NixOS must not allow an unattended or automatic logon to the system via the console.",
+      "cci": [
+        "CCI-000366"
+      ]
+    },
+    "V-268173": {
+      "severity": "medium",
+      "version": "ANIX-00-001890",
+      "rule": "SV-268173r1131154_rule",
+      "title": "NixOS must be configured to use AppArmor.",
+      "cci": [
+        "CCI-000366",
+        "CCI-001764"
+      ]
+    },
+    "V-268174": {
+      "severity": "medium",
+      "version": "ANIX-00-001930",
+      "rule": "SV-268174r1131156_rule",
+      "title": "NixOS must disable account identifiers (individuals, groups, roles, and devices) after 35 days of inactivity.",
+      "cci": [
+        "CCI-003627"
+      ]
+    },
+    "V-268175": {
+      "severity": "medium",
+      "version": "ANIX-00-001940",
+      "rule": "SV-268175r1268232_rule",
+      "title": "NixOS must employ approved cryptographic hashing algorithms for all stored passwords.",
+      "cci": [
+        "CCI-000803"
+      ]
+    },
+    "V-268176": {
+      "severity": "high",
+      "version": "ANIX-00-001960",
+      "rule": "SV-268176r1131160_rule",
+      "title": "NixOS must employ strong authenticators in the establishment of nonlocal maintenance and diagnostic sessions.",
+      "cci": [
+        "CCI-000877"
+      ]
+    },
+    "V-268177": {
+      "severity": "medium",
+      "version": "ANIX-00-002010",
+      "rule": "SV-268177r1268242_rule",
+      "title": "NixOS must implement multifactor authentication for remote access to privileged accounts in such a way that one of the factors is provided by a device separate from the system gaining access.",
+      "cci": [
+        "CCI-004046",
+        "CCI-000187",
+        "CCI-001953",
+        "CCI-001954",
+        "CCI-004047"
+      ]
+    },
+    "V-268178": {
+      "severity": "medium",
+      "version": "ANIX-00-002050",
+      "rule": "SV-268178r1131164_rule",
+      "title": "NixOS must prohibit the use of cached authenticators after one day.",
+      "cci": [
+        "CCI-002007"
+      ]
+    },
+    "V-268179": {
+      "severity": "medium",
+      "version": "ANIX-00-002060",
+      "rule": "SV-268179r1131166_rule",
+      "title": "For PKI-based authentication, NixOS must implement a local cache of revocation data to support path discovery and validation in case of the inability to access revocation information via the network.",
+      "cci": [
+        "CCI-004068"
+      ]
+    },
+    "V-268180": {
+      "severity": "medium",
+      "version": "ANIX-00-002160",
+      "rule": "SV-268180r1149426_rule",
+      "title": "NixOS must run a supported release of the operating system.",
+      "cci": [
+        "CCI-002605"
+      ]
+    },
+    "V-268181": {
+      "severity": "medium",
+      "version": "ANIX-00-002180",
+      "rule": "SV-268181r1131169_rule",
+      "title": "NixOS must define default permissions for all authenticated users in such a way that the user can only read and modify their own files.",
+      "cci": [
+        "CCI-000366"
+      ]
+    }
+  }
+}

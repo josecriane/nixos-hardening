@@ -1,0 +1,6 @@
+[
+  "enforced"
+  "exception"
+  "notApplicable"
+  "deferred"
+]
