@@ -27,6 +27,12 @@
         assert "tcp dpt:https" in out, out
         machine.succeed("ip6tables -L | grep limit")
 
+    with subtest("V-268158 firewall reload keeps the rules in place"):
+        machine.succeed("systemctl reload firewall.service")
+        machine.succeed("iptables -S INPUT | grep -q -- '-j nixos-fw$'")
+        count = machine.succeed("iptables -S | grep -c hashlimit-name").strip()
+        assert count == "3", count
+
     with subtest("V-268146 wireless is disabled"):
         machine.fail("systemctl cat wpa_supplicant.service")
 

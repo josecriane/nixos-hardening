@@ -28,7 +28,7 @@ let
 
   limitCommand =
     limit:
-    "ip46tables --append INPUT --protocol tcp --dport ${toString limit.port} --match hashlimit --hashlimit-name ${limit.name} --hashlimit-mode srcip --hashlimit-above ${limit.above} --jump nixos-fw-refuse";
+    "ip46tables --append nixos-fw --protocol tcp --dport ${toString limit.port} --match hashlimit --hashlimit-name ${limit.name} --hashlimit-mode srcip --hashlimit-above ${limit.above} --jump nixos-fw-refuse";
 
   implemented = [
     "V-268078"
